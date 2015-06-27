@@ -166,7 +166,13 @@ class Sitemap {
 		$this->getWriter()->startElement('urlset');
 		$this->getWriter()->writeAttribute('xmlns', self::SCHEMA);
 	}
-
+	/**
+     	* Call this method after adding items to the sitemap
+     	* This method closes the urlset prevents error
+     	*/
+    	public function endSitmap() {
+        	$this->getWriter()->endElement();
+    	}
 	/**
 	 * Adds an item to sitemap
 	 *
